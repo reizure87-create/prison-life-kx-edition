@@ -1,6 +1,6 @@
-# Prison Life 2026 — KX Edition (PC & Mobile)
+# Prison Life 2026 — KX Edition V3 (PC & Mobile)
 
-Standalone 2026 **Roblox Prison Life** (`PlaceId: 155615604`) LuaU script with full PC + Mobile support, built against verified 2026 client mechanics and remotes.
+Standalone 2026 **Roblox Prison Life** (`PlaceId: 155615604`) LuaU script with responsive PC + Mobile UI, built against verified 2026 client mechanics and remotes.
 
 ## Loadstring
 
@@ -8,35 +8,37 @@ Standalone 2026 **Roblox Prison Life** (`PlaceId: 155615604`) LuaU script with f
 loadstring(game:HttpGet("https://raw.githubusercontent.com/reizure87-create/prison-life-kx-edition/main/PrisonLifeKX.lua"))()
 ```
 
-## Features
+## Highlights (V3)
 
-- **3D Bullet-Blocking Shield (`Shield` / `🛡`)**:
-  - **Hybrid Mode**: Uses real server-replicated `RiotShieldPart` auto-equip + armed-threat facing/spin rotation on Guards (draining Riot Shield HP before health) AND micro CFrame anti-aim desync when playing as Inmates or Criminals, enclosed in a configurable translucent grey 3D shield cube whose self-shots pass straight through.
-  - **Modes**: `Hybrid`, `RiotOnly`, `DesyncBox`, `FEGhost`.
-  - **Shield Penetration**: `Anti-RiotShield` (`RiotShieldPart.CanQuery = false`) and `Vehicle Wallbang`.
-- **Top-Left Fixed `.combo1` & Independently Draggable Neon-Blue `KX` Crest Toggle**:
-  - `.combo1` stays pinned in the top-left corner (`X` on PC) for rapid multi-gun swap bursts across loaded weapons (`Remington 870`, `FAL`, `M4A1`, `AK-47`, `MP5`, `Revolver`, `M9`), with optional Auto-Loop and post-burst Riot Shield peek re-equip.
-  - Drag the glowing `KX` crest button (or the tabbed Hub window) anywhere on screen with viewport clamping & multi-touch isolation, or tap `KX` / press `RightShift` / `K` to open the obsidian dark-glass Hub.
-- **2026 `GunController` Bullet Hook, Ragebot, KillAura & Hitbox Expander**:
-  - Single-install hot-swappable `hookfunction` on `pl.Bullet` (`ActionArea.InputBegan` upvalues) + camera-restoring `tool:Activate()` fallback on lower-UNC executors.
-  - Per-bullet Silent Aim headshot/hit chance rolls (no 60Hz target-bone flicker), FOV ring, Wallcheck, Origin Wallbang scanner, Guard Hostile-only check, and 360° Ragebot with auto gun-switch.
-  - Fire Rate, No Spread, Full Auto, Infinite Range, Auto Reload, Melee KillAura (`meleeEvent`), Hitbox Expander (invisible `Transparency = 1` HRP scaling), and instant `#TouchGiver` + `GiverPressed` weapon grabber.
-- **Top-Right `KX ADMIN` Command Bar (65+ Commands)**:
-  - Run chained `;`-separated commands from mobile (`CMD` button) or PC (`Enter`):
-    - Combat & Shield: `shield`, `unshield`, `shieldmode <hybrid|riot|desync|ghost>`, `shield spin`, `shieldsize <n>`, `antishield`, `ragebot`, `silentaim`, `aimbot`, `killaura`, `hitbox`, `wallbang`, `carwallbang`, `modguns`, `combo1`, `autocombo`, `guns`
-    - Prison & Car: `team <g|i|c|n>`, `tp <loc|plr>`, `goto <plr>`, `arrest`, `autoarrest`, `autotaze`, `antitase`, `autocrime`, `fastrespawn`, `autoheal`, `autoarmor`, `doors`, `fence`, `spawncar`, `carfly <n>`, `carfling`, `antifling`
-    - Movement & Visuals: `fly <n>`, `unfly`, `noclip`, `clip`, `speed <n>`, `ws <n>`, `safespeed`, `jp <n>`, `infjump`, `invis`/`ghost`, `esp`, `c4esp`, `tracers`, `killfeed`, `shieldbox`, `alerts`, `clear`, `re`, `rejoin`, `serverhop`, `unload`
-- **Real Heuristic Cheater & Car-Teleport Alerts + Custom Killfeed**:
-  - Top-center `[Alert] <Player> Possible Car Teleport User` banner when abnormal vehicle/teleport displacement occurs.
-  - Bottom-center streak & crimson `[RAGEBOT]` killfeed (`ReplicatedStorage.Killfeed` supporting `StringValue`, `TextLabel`, attributes & `[hp%]` tags) + blue `🛡` Shield HP mirror badge.
-- **Right-Side Mobile/PC Quick Action Buttons**:
-  - `GHOST` (FE Ghost toggle), `CLEAN` (clear HUD & unstuck tase/speed), `SHIELD` (one-tap 3D Bullet Shield), plus contextual `UP` / `DN` buttons in a dedicated side pad during Character Fly or Vehicle Fly (with slide-off touch release protection).
-- **Prison, Vehicle, Movement & ESP Utilities**:
-  - Instant team switching (`RequestTeamChange`), Auto-Arrest, Auto-Tase, Anti-Tase, Fast Respawn, Open All Doors, Fence Godmode, Anti-KillPlane (`Y < -12`), Auto-Armor, Auto-Heal (`EatFood` + `SnackEaten`), Auto-Pickup, Car Spawner, Character Fly, Custom JumpPower, Vehicle Fly/Speed/Fling, Safe Anti-Fling, 2026 Region-Safe Speed (`32`/`50`/`100` caps), Highlight Chams, Healthbars, Diamond Markers, Bullet Tracers, C4 ESP.
+- **Obsidian 6-Tab Hub (`Shield`, `Rage & Aim`, `Guns & Loot`, `Prison & Car`, `Move & ESP`, `Settings & Admin`)**:
+  - Live widget search bar, animated TweenService transitions, presets (`Legit`, `Rage`, `Default`), JSON config profiles (save/load/delete/auto-load), and click-to-rebind keyboard shortcuts.
+  - Compact Mobile responsive layout (`<= 740px` / `< 450px` height) with horizontal pill tabs and touch-friendly sliders that preserve vertical scrolling unless dragged horizontally.
+- **3D Holographic Bullet Shield (`Shield` / `G`)**:
+  - **Modes**: `Hybrid` (server-replicated `RiotShieldPart` auto-equip + armed-threat auto-facing on Guards + micro CFrame anti-aim desync on Inmates/Criminals), `RiotOnly`, `DesyncBox`, and `FEGhost`.
+  - Translucent translucent-edge 3D shield enclosure (`ShieldTransparency`, `ShieldSize`), self-shot filter passthrough, Shield HP pill with animated durability meter & hit pulse VFX, `Anti-RiotShield` (`RiotShieldPart.CanQuery = false`), and `Vehicle Wallbang`.
+- **Top-Left `.combo1`, `KX` Crest & Pinned Quick Pills**:
+  - Fixed `.combo1` burst button (`X` on PC) for rapid multi-weapon bursts across loaded firearms (`Remington 870`, `FAL`, `M4A1`, `AK-47`, `MP5`, `Revolver`, `M9`), with Auto-Loop and post-burst shield peek.
+  - Independently draggable `KX` toggle crest plus customizable pinned feature chips (`RAGE`, `SHIELD`, `FLY`, etc.).
+- **2026 `GunController` Bullet Hook, Silent Aim, Ragebot & Hitbox Expander**:
+  - Single-install hot-swappable `hookfunction` on `pl.Bullet` with camera-restoring `tool:Activate()` fallback.
+  - Per-bullet Silent Aim headshot/hitchance rolls, FOV circle, Wallcheck, Wallbang scanner, Auto Armor Penetration (headshot priority on vested targets), Guard Hostile-only filter, 360° Ragebot with Auto-Switch & Fire-Rate SPS pacing, Gun Mods (`FireRate`, `NoSpread`, `InfiniteRange`, `AutoReload`), Melee `KillAura`, `HitboxExpander` (`Transparency = 1`), and `#TouchGiver` / `GiverPressed` instant gun grabber.
+- **Top-Right `KX ADMIN` Command Bar & Drawer (119 Registered Commands)**:
+  - Prefix-flexible (`;`, `/`, `-`, `!`, `.`) semicolon-chained execution (`;gun ak;rage on;shield on`), live autocomplete dropdown, pinned Quick Chips, and a 2-tab **Commands / Output** drawer.
+  - Highlights:
+    - **Team & Prison**: `;crim` / `;guard` / `;inmate` / `;team <name>`, `;arrest`, `;arrestall` (`;aa`), `;autoarrest`, `;autotaze`, `;antitaze`, `;autocrim`, `;re` (`;respawn`), `;opendoors`, `;fencegod`, `;autoheal`, `;autoarmor`, `;car`
+    - **Combat & Defense**: `;shield`, `;unshield`, `;shieldmode <mode>`, `;antiriot`, `;ragebot`, `;silentaim`, `;aimassist`, `;killaura`, `;loopkill <plr>`, `;hitbox`, `;wallbang`, `;carwallbang`, `;combo1`, `;gun <name>`, `;guns`, `;loadout <kit>`
+    - **Movement & Visuals**: `;fly [speed]`, `;unfly`, `;noclip` (`;nc`), `;clip`, `;speed [n]`, `;safespeed`, `;jp [n]`, `;infjump`, `;invis` (`;ghost`), `;esp`, `;c4esp`, `;bullettracers`, `;killfeed`, `;cheateralerts`, `;caralerts`
+    - **System & Configs**: `;cmds`, `;preset <legit|rage|default>`, `;saveconfig <name>`, `;loadconfig <name>`, `;rejoin`, `;serverhop`, `;unload`
+- **Safe-Area Mobile Quick Dock, Alerts & Killfeed**:
+  - Bottom-right circular quick buttons (`SHIELD`, `GHOST`, `CLEAN`) and contextual `UP` / `DN` Fly pad placed clear of Roblox TopBar, Prison Clock, Mobile Ammo Box, Hotbar, and jump controls.
+  - Heuristic Speed/TP & Car-TP anomaly banners (`CheaterAlerts` / `CarTPAlerts`), custom `[HS]` / `[RAGEBOT]` Killfeed (`AboveHotbar` or `TopLeft`), 30-Highlight budget LOD Player/C4 ESP, 4-tick animated Hitmarker, and idempotent full unload (`__PL_KX_Cleanup`) restoring hooks, doors, physics, and UI cleanly.
 
 ## Default Keybinds (PC)
 
-- `RightShift` / `K` — Toggle KX Hub Menu
+- `K` / `RightShift` — Toggle KX Hub Menu
 - `G` — Toggle 3D Bullet Shield
-- `X` — Trigger `.combo1` Burst
+- `X` — Execute `.combo1` Burst
 - `B` — Toggle Ragebot
+- `F` — Toggle Fly
+- `N` — Toggle Noclip
+- `;` (`Semicolon`) — Focus KX Command Bar
